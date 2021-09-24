@@ -7,6 +7,6 @@ To upload samle data:
 
 To run:
 
-- run './submit_delays_counter.sh'
+- run `./submit_delays_counter.sh`
 
 Check out bash scripts parameters with `-h` flag or open the files
