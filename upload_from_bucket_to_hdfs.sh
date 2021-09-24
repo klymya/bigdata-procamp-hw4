@@ -18,14 +18,14 @@ done
 
 if [[ -z "$HDFS_PATH" ]];
 then
-  HDFS_PATH="/bdpc/hadoop_mr/2015_Flight_Delays_and_Cancellations/input.flights.csv"
+  HDFS_PATH="/bdpc/hadoop_mr/2015_Flight_Delays_and_Cancellations/input"
   hadoop fs -rm -R "$HDFS_PATH"
   hdfs dfs -mkdir -p "$HDFS_PATH"
 fi
 
 if [[ -z "$BUCKET_PATH" ]];
 then
-  BUCKET_PATH="gl-procamp-bigdata-datasets/2015_Flight_Delays_and_Cancellations/flights.csv"
+  BUCKET_PATH="gs://gl-procamp-bigdata-datasets/2015_Flight_Delays_and_Cancellations/flights.csv"
 fi
 
 echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
