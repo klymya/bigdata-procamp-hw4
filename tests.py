@@ -7,7 +7,7 @@ from reducer import reducer
 
 
 @contextmanager
-def captured_output(inputs):
+def std_mock(inputs):
     new_out, new_in = StringIO(), StringIO(inputs)
     old_out, old_in = sys.stdout, sys.stdin
     try:
@@ -18,7 +18,7 @@ def captured_output(inputs):
 
 
 def test_mapper():
-    with captured_output(
+    with std_mock(
         "{}\n{}".format(
             ','.join(['test']*15), ','.join([str(i) for i in range(15)]))
     ) as (out, inn):
@@ -29,7 +29,7 @@ def test_mapper():
 
 
 def test_reducer():
-    with captured_output(
+    with std_mock(
         "a\t1\nb\t3\nc\t5\na\t3"
     ) as (out, inn):
         reducer()
