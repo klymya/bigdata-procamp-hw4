@@ -8,7 +8,7 @@ usage() {
   exit 1
 }
 
-while getopts ":f:d:" opt; do
+while getopts ":b:d:" opt; do
     case "$opt" in
         b)  BUCKET_PATH=${OPTARG} ;;
         d)  HDFS_PATH=${OPTARG} ;;
